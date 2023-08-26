@@ -13,7 +13,7 @@ const Weather = () => {
   //show weather function
   const showWeather = () => {
     const key = 'b4db485d7c4c485fa6d84351232508'
-    axios.get(`http://api.weatherapi.com/v1/current.json?key=${key}&q=${inputRef.current.value}&aqi=no`)
+    axios.get(`https://api.weatherapi.com/v1/current.json?key=${key}&q=${inputRef.current.value}&aqi=no`)
       .then((res) => {
         // console.log('res==>', res.data);
         setData([...data , res.data]);
