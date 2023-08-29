@@ -21,12 +21,13 @@ const Weather = () => {
       })
       .catch((err) => {
         // console.log(err);
-        alert('no such city')
+        alert('no such city');
+        inputRef.current.value = '';
       })
   }
   return (
-    <>
-      <h1 className="text-3xl text-center mt-2">
+    <div className='h-[100vh]'>
+      <h1 className="text-3xl text-center mt-2  font-extrabold">
         Weather App
       </h1>
       <div className='w-[50%] mx-auto mt-[3%]'>
@@ -39,7 +40,7 @@ const Weather = () => {
       {data.length > 0 ? data.map((item)=>{
         return <Card key={item.location.name} name={item.location.name} temperature={item.current.temp_c} src={item.current.condition.icon} date={item.location.localtime} weatherText={item.current.condition.text} country={item.location.country}/> 
       }):  <h1 className='text-center mt-[2rem]'>Please search weather.</h1>}
-    </>
+    </div>
   )
 }
 
